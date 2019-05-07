@@ -20,14 +20,14 @@
 
 spring:
   mail:
-    host: smtp.163.com
-    username: tornado4651@163.com
-    password: Tornado4651
+    host: smtp.163.com #or others
+    username: #your email
+    password: #your password
     default-encoding: UTF-8
   datasource:
     url: jdbc:mysql://localhost:3306/
     username: root
-    password: 18347176536=Ljf
+    password: #your password
     driver-class-name: com.mysql.cj.jdbc.Driver
   mvc:
     static-path-pattern: /static/**
