@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>发送富文本邮件</title>
+		<link rel="stylesheet" href="../../static/assets/css/amazeui.css" />
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../static/assets/css/core.css" />
+		<link rel="stylesheet" href="../../static/assets/css/menu.css" />
+		<link rel="stylesheet" href="../../static/assets/css/index.css" />
+		<link rel="stylesheet" href="../../static/assets/css/admin.css" />
+		<link rel="stylesheet" href="../../static/assets/css/page/typography.css" />
+		<link rel="stylesheet" href="../../static/assets/css/page/form.css" />
+
+	</head>
+	<body>
+
+		<!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">		
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="user_index.html" class="logo"><span>邮件系统</span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+	
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+
+					<li><h4 class="page-title">发送富文本邮件</h4></li>
+				</ul>
+				
+				<ul class="am-nav am-navbar-nav am-navbar-right">
+					<li class="inform"><i class="am-icon-bell-o" aria-hidden="true"></i></li>
+					<li class="hidden-xs am-hide-sm-only">
+                        <form role="search" class="app-search">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><img src="../../static/assets/img/search.png"></a>
+                        </form>
+                    </li>
+				</ul>
+			</div>
+		</header>
+		<!-- end page -->
+		
+		
+		<div class="admin">
+			<!--<div class="am-g">-->
+		<!-- ========== Left Sidebar Start ========== -->
+		<!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+				<div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+                  <!-- sidebar start -->
+				  <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+				    <div class="am-offcanvas-bar admin-offcanvas-bar">
+				    	<!-- User -->
+						<div class="user-box am-hide-sm-only">
+	                        <div class="user-img">
+	                            <img src="../../static/assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+	                            <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+	                        </div>
+	                        <h5><a href="#">Mat Helme</a> </h5>
+							<form action="/logout" method="post">
+								<button type="submit">退出</button>
+							</form>
+	                        <ul class="list-inline">
+	                            <li>
+	                                <a href="#">
+	                                    <i class="am-icon-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	
+	                            <li>
+	                                <a href="#" class="text-custom">
+	                                    <i class="am-icon-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <!-- End User -->
+
+						<ul class="am-list admin-sidebar-list">
+							<li><a href="user_index.html"><span class="am-icon-home"></span> 首页</a></li>
+							<li class="admin-parent">
+								<!--单独备注下拉功能-->
+								<a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 发送邮件 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+								<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+									<li><a href="email_send_Simple.html" class="am-cf"> 发送简单邮件</a></li>
+									<li><a href="email_send_Html.html" class="am-cf"> 发送富文本邮件</a></li>
+									<li><a href="email_send_Attachment.html" class="am-cf"> 发送附件邮件邮件</a></li>
+								</ul>
+							<li><a href="email_check.html">已发送</a></li>
+							<!--<li class="admin-parent">-->
+							<!--<a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><i class="am-icon-line-chart" aria-hidden="true"></i> 统计图表 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>-->
+							<!--<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">-->
+							<!--<li><a href="chart_line.html" class="am-cf"> 折线图</span></a></li>-->
+							<!--<li><a href="chart_columnar.html" class="am-cf"> 柱状图</span></a></li>-->
+							<!--<li><a href="chart_pie.html" class="am-cf"> 饼状图</span></a></li>-->
+							<!--</ul>-->
+							<!--</li>-->
+							<!--<li class="admin-parent">-->
+							<!--<a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span> 表单 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>-->
+							<!--<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">-->
+							<!--<li><a href="form_basic.html" class="am-cf"> 基本表单</a></li>-->
+							<!--<li><a href="form_validate.html">表单验证</a></li>   -->
+							<!--</ul>-->
+							<!--</li>-->
+						</ul>
+				</div>
+				  </div>
+				  <!-- sidebar end -->
+    
+				<!--</div>
+			</div>
+		</div>-->
+		<!-- ========== Left Sidebar end ========== -->
+		
+		
+		
+	<!--	<div class="am-g">-->
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+			<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				<div class="am-g">
+					<!-- Row start -->
+					<div class="am-u-sm-12">
+						<div class="card-box">
+							<form action="/SendHtmlEmail" method="post" class="am-form" data-am-validator>
+								<fieldset>
+									<div class="am-form-group">
+										<label for="doc-vld-name-2">收件人：</label>
+										<input type="email" id="doc-vld-name-2" name="receiver" placeholder="输入收件人" required/>
+									</div>
+
+									<div class="am-form-group">
+										<label for="doc-vld-email-2">主题：</label>
+										<input type="text" id="doc-vld-email-2" name="subject" placeholder="输入邮件主题" required/>
+									</div>
+									<div class="am-form-group">
+										<label for="doc-vld-ta-2">富文本内容：</label>
+										<textarea id="doc-vld-ta-2" name="content" placeholder="请输入富文本（HTML）"></textarea>
+									</div>
+									<button class="am-btn am-btn-secondary" type="submit">发送</button>
+									<span style="color: red" th:text="${state}"></span>
+								</fieldset>
+							</form>
+
+
+						</div>
+					</div>
+					<!-- Row end -->
+				</div>
+			</div>
+		</div>
+			<!--完整注释掉-->
+		<!--<div class="content-page">-->
+			<!--&lt;!&ndash; Start content &ndash;&gt;-->
+			<!--<div class="content">-->
+				<!--<div class="am-g">-->
+					<!--&lt;!&ndash; Row start &ndash;&gt;-->
+						<!--<div class="am-u-sm-6">-->
+							<!--<div class="card-box">-->
+								<!--&lt;!&ndash; col start &ndash;&gt;-->
+								<!--<table class="am-table">-->
+								    <!--<thead>-->
+								        <!--<tr>-->
+								            <!--<th>网站名称</th>-->
+								            <!--<th>网址</th>-->
+								            <!--<th>创建时间</th>-->
+								        <!--</tr>-->
+								    <!--</thead>-->
+								    <!--<tbody>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								    <!--</tbody>-->
+								<!--</table>-->
+								<!--&lt;!&ndash; col end &ndash;&gt;-->
+							<!--</div>-->
+						<!--</div>-->
+						<!---->
+						<!--<div class="am-u-sm-6">-->
+							<!--<div class="card-box">-->
+								<!--&lt;!&ndash; col start &ndash;&gt;-->
+									<!--<table class="am-table  am-table-hover">-->
+								    <!--<thead>-->
+								        <!--<tr>-->
+								            <!--<th>网站名称</th>-->
+								            <!--<th>网址</th>-->
+								            <!--<th>创建时间</th>-->
+								        <!--</tr>-->
+								    <!--</thead>-->
+								    <!--<tbody>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								    <!--</tbody>-->
+								<!--</table>-->
+								<!--&lt;!&ndash; col end &ndash;&gt;-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--&lt;!&ndash; Row end &ndash;&gt;-->
+				<!--</div>-->
+			<!---->
+				<!--&lt;!&ndash; row start &ndash;&gt;-->
+				<!--<div class="am-g">-->
+					<!--&lt;!&ndash; col start &ndash;&gt;-->
+					<!--<div class="am-u-md-6">-->
+						<!--<div class="card-box">-->
+							<!--<table class="am-table am-table-bordered">-->
+								    <!--<thead>-->
+								        <!--<tr>-->
+								            <!--<th>网站名称</th>-->
+								            <!--<th>网址</th>-->
+								            <!--<th>创建时间</th>-->
+								        <!--</tr>-->
+								    <!--</thead>-->
+								    <!--<tbody>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								    <!--</tbody>-->
+								<!--</table>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--&lt;!&ndash; col end &ndash;&gt;-->
+					<!---->
+					<!--&lt;!&ndash; col start &ndash;&gt;-->
+					<!--<div class="am-u-md-6">-->
+						<!--<div class="card-box">-->
+							<!--<table class="am-table  am-table-striped">-->
+								    <!--<thead>-->
+								        <!--<tr>-->
+								            <!--<th>网站名称</th>-->
+								            <!--<th>网址</th>-->
+								            <!--<th>创建时间</th>-->
+								        <!--</tr>-->
+								    <!--</thead>-->
+								    <!--<tbody>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								        <!--<tr>-->
+								            <!--<td>Amaze UI</td>-->
+								            <!--<td>http://amazeui.org</td>-->
+								            <!--<td>2012-10-01</td>-->
+								        <!--</tr>-->
+								    <!--</tbody>-->
+								<!--</table>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--&lt;!&ndash; col end &ndash;&gt;-->
+				<!--</div>-->
+				<!--&lt;!&ndash; row end &ndash;&gt;-->
+
+				<!---->
+			<!--</div>-->
+		<!--</div>-->
+		<!-- end right Content here -->
+		<!--</div>-->
+		</div>
+
+		<script type="text/javascript" src="../../static/assets/js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="../../static/assets/js/amazeui.min.js"></script>
+		<script type="text/javascript" src="../../static/assets/js/app.js" ></script>
+		<script type="text/javascript" src="../../static/assets/js/blockUI.js" ></script>
+
+
+
+	</body>
+	
+</html>
